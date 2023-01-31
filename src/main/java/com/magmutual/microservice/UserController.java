@@ -1,10 +1,12 @@
 package com.magmutual.microservice;
 
-import java.util.List;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@RestController
-@RequestMapping(path="magmutual")
+import java.util.List;
+
+
+@Controller
 public class UserController {
     private final UserRepository repository;
 

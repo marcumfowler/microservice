@@ -11,7 +11,6 @@ import java.time.format.DateTimeFormatter;
 
 @Configuration
 public class LoadDatabase {
-
     private static final Logger log = LoggerFactory.getLogger(LoadDatabase.class);
     private final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
     private final LocalDateTime date = LocalDateTime.now();
