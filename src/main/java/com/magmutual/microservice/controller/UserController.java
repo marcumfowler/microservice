@@ -1,15 +1,15 @@
 package com.magmutual.microservice;
 
-import org.springframework.stereotype.Controller;
+import org.springframework.http.MediaType;
+import org.springframework.web.HttpMediaTypeNotAcceptableException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 
-@Controller
+@RestController
 public class UserController {
     private final UserRepository repository;
-
     public UserController(UserRepository repository) {
         this.repository = repository;
     }
@@ -53,5 +53,11 @@ public class UserController {
     @DeleteMapping("/users/{id}")
     void deleteUser(@PathVariable Integer id) {
         repository.deleteById(id);
+    }
+
+    @ResponseBody
+    @ExceptionHandler(HttpMediaTypeNotAcceptableException.class)
+    public String handleHttpMediaTypeNotAcceptableException() {
+        return "acceptable MIME type:" + MediaType.APPLICATION_JSON_VALUE;
     }
 }
