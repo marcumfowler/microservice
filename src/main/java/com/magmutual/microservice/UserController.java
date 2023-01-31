@@ -1,7 +1,6 @@
 package com.magmutual.microservice;
 
 import java.util.List;
-
 import org.springframework.web.bind.annotation.*;
 
 @RestController
