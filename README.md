@@ -1,2 +1,4 @@
 # microservice
-Spring Boot Rest Service I killed to get hired at MagMutual
+Spring Boot Rest Service 
+
+Actions for dev and main deployments
